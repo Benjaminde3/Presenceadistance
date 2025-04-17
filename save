@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="ANVNv5YMJ-n9x4wQOOUA6lddtpKyC1zm6iqRq1uH1Jc" />
+  <title>Présence à Distance</title>
+  <style>
+    :root {
+      --primary-color: #394054;
+      --secondary-color: #E0E2E8;
+      --accent-color: #B0C0D4;
+      --font: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #E0E2E8;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #E0E2E8;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .section {
+      padding: 100px 20px 60px;
+    }
+
+    #hero {
+      background: url('https://images.unsplash.com/photo-1603394026319-bb7221e9f3dd') no-repeat center center/cover;
+      color: #1C1C1F;
+      text-align: center;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .services, .about, .contact {
+      background-color: var(--secondary-color);
+      margin-top: 2rem;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .services h2, .about h2, .contact h2 {
+      color: var(--primary-color);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: var(--accent-color);
+      color: #E0E2E8;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    form button:hover {
+      background-color: #00796b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--primary-color);
+      color: #E0E2E8;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div><strong>PRESENCE A DISTANCE</strong></div>
+    <div>
+      <a href="#hero">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section id="hero">
+  <h1>BIENVENUE SUR PRESENCE A DISTANCE</h1>
+  <p>Des services de qualité pour votre bien-être à domicile, adaptés à vos besoins.</p>
+</section>
+
+<section id="services" class="section services">
+  <h2>Nos Services</h2>
+  <ul>
+    <li>Formation en ligne</li>
+    <li>Dépannage de matériel informatique</li>
+    <li>Diagnostique informatique</li>
+  </ul>
+</section>
+
+<section id="about" class="section about">
+  <h2>À propos</h2>
+  <p>Nous sommes une entreprise dédiée à <strong>l'aide à distance</strong>, avec une équipe professionnelle et bienveillante. Depuis 2025, nous accompagnons nos clients dans leur <strong>quotidien informatique</strong> avec sérieux, bienveillance et patience.</p>
+</section>
+
+<section id="contact" class="section contact">
+  <h2>Contactez-nous</h2>
+  <form id="contact-form">
+    <input type="text" placeholder="Votre nom" required />
+    <input type="email" placeholder="Votre email" required />
+    <textarea rows="4" placeholder="Votre message" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+  <p id="form-message" style="color: green; margin-top: 1rem;"></p>
+</section>
+
+<footer>
+  &copy; 2025 Présence à Domicile - Tous droits réservés
+</footer>
+
+<script>
+  // Scroll doux (facultatif car scroll-behavior fait le job)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Formulaire de contact (simulation)
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("form-message").textContent = "Merci pour votre message !";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
+
